@@ -1,5 +1,6 @@
 public class Samurai extends GameChar{
-    public Samurai(int damage, int health, int money) {
-        super(5, 21, 15);
+    public Samurai() {
+        super(1,"Samuray",5, 21, 15);
     }
+
 }

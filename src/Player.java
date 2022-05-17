@@ -1,9 +1,12 @@
+import java.util.Scanner;
+
 public class Player {
     private int damage;
     private int health;
     private int money;
     private String name;
     private  String charName;
+    Scanner input = new Scanner(System.in);
 
     Inventory inventory = new Inventory();
 
@@ -12,14 +15,41 @@ public class Player {
     }
 
     public void selectChar(){
+
+        GameChar[] charlist = {new Samurai(), new Archer(), new Knight()};
+        System.out.println("");
+        System.out.println("Karakterler");
         System.out.println("---------------------------------");
-        System.out.println("Karakter: Samuray \t Hasar: 5 \t Sağlık: 21 \t Para: 15");
-        System.out.println("Karakter: Okçu \t Hasar: 7 \t Sağlık: 18 \t Para: 20");
-        System.out.println("Karakter: Şövalye \t Hasar: 8 \t Sağlık: 24 \t Para: 5");
+        for (GameChar gameChar : charlist){
+            System.out.println( gameChar.getId() + "\t\tKarakter : " + gameChar.getName() +
+                        "\t\t Hasar : " + gameChar.getDamage() +
+                        "\t\t Sağlık : " + gameChar.getHealth() +
+                        "\t\t Para : " + gameChar.getMoney());
+        }
+        System.out.println("Lütfen bir karakter seçiniz:");
+        int selectChar = input.nextInt();
 
-
+        switch (selectChar){
+            case 1:
+                initPlayer(new Samurai());
+                break;
+            case 2:
+                initPlayer(new Archer());
+                break;
+            case 3:
+                initPlayer(new Knight());
+                break;
+            default:
+                initPlayer(new Samurai());
+        }
     }
 
+    public void initPlayer(GameChar gameChar){
+        this.setDamage(gameChar.getDamage());
+        this.setHealth(gameChar.getHealth());
+        this.setMoney(gameChar.getMoney());
+        System.out.println(gameChar.getName() + " seçildi!");
+    }
     public int getDamage() {
         return damage;
     }
