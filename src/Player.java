@@ -26,6 +26,7 @@ public class Player {
                         "\t\t Sağlık : " + gameChar.getHealth() +
                         "\t\t Para : " + gameChar.getMoney());
         }
+        System.out.println("---------------------------------");
         System.out.println("Lütfen bir karakter seçiniz:");
         int selectChar = input.nextInt();
 
@@ -43,6 +44,7 @@ public class Player {
                 initPlayer(new Samurai());
         }
     }
+
 
     public void initPlayer(GameChar gameChar){
         this.setDamage(gameChar.getDamage());
