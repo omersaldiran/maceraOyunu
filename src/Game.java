@@ -14,6 +14,7 @@ public class Game {
 
         Location location = null;
         while(true){
+            player.printInfo();
             System.out.println("");
             System.out.println("Bölgeler");
             System.out.println("-----------------------------");

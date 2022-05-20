@@ -12,11 +12,20 @@ public class Weapon {
     }
 
     public static Weapon[] weapons() {
-        Weapon[] weaponsList = {new Weapon("Tabanca", 1, 2, 25),
+        Weapon[] weaponsList = {new Weapon("Tabanca", 1, 2, 15),
                 new Weapon("Kılıç", 2, 3, 35),
                 new Weapon("Tüfek", 3, 7, 45)};
 
         return weaponsList;
+    }
+
+    public static Weapon getWeaponByID(int id){
+        for(Weapon w : Weapon.weapons()){
+            if(w.getId()==id){
+                return w;
+            }
+        }
+        return null;
     }
 
     public int getId() {
