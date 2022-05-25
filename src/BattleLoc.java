@@ -32,6 +32,22 @@ public abstract class BattleLoc extends Location{
         return true;
     }
 
+    public boolean combat(int obsNumber){
+        for(int i=1;i<=obsNumber;i++){
+            playerStats();
+        }
+        return false;
+    }
+
+    public void playerStats(){
+        System.out.println("Oyuncu değerleri");
+        System.out.println("-----------------------");
+        System.out.println("Sağlık : "+ this.getPlayer().getHealth());
+        System.out.println("Hasar  : "+ this.getPlayer().getTotalDamage());
+        System.out.println("Silah   : "+ this.getPlayer().getInventory().getWeapon().getName());
+        System.out.println("Para   : "+ this.getPlayer().getMoney());
+    }
+
     public int randomObstacleNumber(){
         Random r = new Random();
         return r.nextInt(this.getMaxObstacle())+1;
