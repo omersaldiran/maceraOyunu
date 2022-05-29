@@ -24,10 +24,8 @@ public abstract class BattleLoc extends Location{
         selectCase = selectCase.toUpperCase();
         if(selectCase.equals("S") && combat(obsNumber)){
             System.out.println("Savaşa giriliyor!");
-            if(combat(obsNumber)){
                 System.out.println(this.getName()+" alanındaki tüm düşmanları yendiniz!");
                 return true;
-            }
 
         }
         if(this.getPlayer().getHealth() <= 0){
