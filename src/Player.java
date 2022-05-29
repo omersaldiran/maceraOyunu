@@ -6,7 +6,7 @@ public class Player {
     private int defHealth;
     private int money;
     private String name;
-    private  String charName;
+    private String charName;
     Scanner input = new Scanner(System.in);
 
     Inventory inventory;
@@ -24,7 +24,7 @@ public class Player {
         System.out.println("Karakterler");
         System.out.println("---------------------------------");
         for (GameChar gameChar : charlist){
-            System.out.println( gameChar.getId() + "\t\tKarakter : " + gameChar.getName() +
+            System.out.println( gameChar.getId() + "\t\t Karakter : " + gameChar.getName() +
                         "\t\t Hasar : " + gameChar.getDamage() +
                         "\t\t Sağlık : " + gameChar.getHealth() +
                         "\t\t Para : " + gameChar.getMoney());
@@ -58,9 +58,9 @@ public class Player {
     }
 
     public void printInfo(){
-        System.out.println( "\t\tSilahınız : " + this.getInventory().getWeapon().getName() +
-                "\t\tZırhınız : " + this.getInventory().getArmor().getName() +
-                "\t\tBloklama : " + this.getInventory().getArmor().getBlock() +
+        System.out.println( "\t\t Silahınız : " + this.getInventory().getWeapon().getName() +
+                "\t\t Zırhınız : " + this.getInventory().getArmor().getName() +
+                "\t\t Bloklama : " + this.getInventory().getArmor().getBlock() +
                 "\t\t Hasarınız : " + this.getTotalDamage() +
                 "\t\t Sağlığınız : " + this.getHealth() +
                 "\t\t Paranız : " + this.getMoney());
